@@ -1,0 +1,79 @@
+{
+  "selected_model": "gradient_boosting",
+  "training_sample": 500000,
+  "validation_journeys": 494175,
+  "test_journeys": 1280495,
+  "test_buyers": 31349,
+  "test_purchase_rate": 0.02448193862529725,
+  "training_prevalence": 0.017862,
+  "validation": [
+    {
+      "model": "logistic_regression",
+      "average_precision": 0.055420825366758616,
+      "roc_auc": 0.7003727036748942,
+      "brier_score": 0.024387905249951238,
+      "log_loss": 0.11246595193950143,
+      "top20_purchase_capture": 0.4538245895074089
+    },
+    {
+      "model": "gradient_boosting",
+      "average_precision": 0.06781040442386804,
+      "roc_auc": 0.7305581947979461,
+      "brier_score": 0.024165706267461784,
+      "log_loss": 0.10982450118756315,
+      "top20_purchase_capture": 0.5012414897877453
+    }
+  ],
+  "test": [
+    {
+      "model": "constant_baseline",
+      "average_precision": 0.02448193862529725,
+      "roc_auc": 0.5,
+      "brier_score": 0.023926396893847124,
+      "log_loss": 0.11612395680498244,
+      "top20_purchase_capture": 0.2
+    },
+    {
+      "model": "gradient_boosting",
+      "average_precision": 0.06813420574788945,
+      "roc_auc": 0.735128676391343,
+      "brier_score": 0.023388324718288785,
+      "log_loss": 0.10635067129355524,
+      "top20_purchase_capture": 0.5080225844524546
+    }
+  ],
+  "policy_segments": [
+    {
+      "policy": "no_new_offers",
+      "contacts": 0,
+      "observed_buyers_contacted": 0,
+      "observed_nonbuyers_contacted": 0
+    },
+    {
+      "policy": "blanket",
+      "contacts": 1280495,
+      "observed_buyers_contacted": 31349,
+      "observed_nonbuyers_contacted": 1249146
+    },
+    {
+      "policy": "random_20pct",
+      "contacts": 256099,
+      "observed_buyers_contacted": 6349,
+      "observed_nonbuyers_contacted": 249750
+    },
+    {
+      "policy": "selective_20pct",
+      "contacts": 256099,
+      "observed_buyers_contacted": 1564,
+      "observed_nonbuyers_contacted": 254535
+    }
+  ],
+  "seed": 42,
+  "primary_scenario_assumptions": {
+    "order_value": 100,
+    "margin": 0.35,
+    "discount": 0.1,
+    "contact_cost": 0.05
+  },
+  "warning": "Purchase propensity does not identify coupon response. Financial outputs are simulations, not realized profit."
+}

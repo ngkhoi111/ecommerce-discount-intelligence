@@ -11,4 +11,5 @@ if (Test-Path -LiteralPath 'requirements-lock.txt') { $dependencyFile = 'require
 if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed.' }
 & ./.venv/Scripts/python.exe -m ipykernel install --sys-prefix --name discount-intelligence --display-name 'Discount Intelligence (.venv)'
 if ($LASTEXITCODE -ne 0) { throw 'Notebook kernel setup failed.' }
-Write-Host 'Ready. Next: download and extract the raw dataset into data/raw, then run .\.venv\Scripts\python.exe scripts\profile_data.py'
+Write-Host 'Python environment ready. Follow the learning steps in the chat.'
+
